@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Salasanageneraattori</title>
+</head>
+<body>
+    <pre id="pwds">Ladataan kotus_sanat.txt...</pre>
+    <button id="generate" onclick="generate(10, 3)" disabled>Lisää salasanoja</button>
+    <script>
+        fetch('./kotus_sanat.txt')
+            .then(response => response.text())
+            .then(text => text.split('\n'))
+            .then(lines => {
+                // modifying global state
+                document.getElementById('generate').removeAttribute('disabled')
+                window.wordlist = lines
+                generate(10, 3)
+            })
+
+        function generate(pwd_count, pwd_len) {
+            var pwds = []
+            for (var i = pwd_count + 1; --i;) {
+                var pwd_words = []
+                for (var j = pwd_len + 1; --j;) {
+                    const pos = Math.floor(Math.random() * wordlist.length)
+                    const word = wordlist[pos]
+                    pwd_words.push(word)
+                }
+                const pwd = pwd_words.join(' ')
+                pwds.push(pwd)
+            }
+            document.getElementById('pwds').innerText = pwds.join('\n')
+        }
+    </script>
+</body>
+</html>
