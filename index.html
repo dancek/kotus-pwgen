@@ -3,8 +3,10 @@
     <title>Salasanageneraattori</title>
 </head>
 <body>
-    <pre id="pwds">Ladataan kotus_sanat.txt...</pre>
+    <pre id="pwds" style="line-height: 2.0">Ladataan kotus_sanat.txt...</pre>
     <button id="generate" onclick="generate(10, 3)" disabled>Lisää salasanoja</button>
+    <hr/>
+    <a href="https://github.com/dancek/kotus-pwgen">Source code and other implementations on GitHub</a>
     <script>
         fetch('./kotus_sanat.txt')
             .then(response => response.text())
