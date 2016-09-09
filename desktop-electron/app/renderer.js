@@ -1,7 +1,7 @@
 const fs = require('fs')
 
 new Promise((resolve, reject) => {
-    fs.readFile('./kotus_sanat.txt', {encoding: 'utf-8'}, (err, data) => {
+    fs.readFile(`${__dirname}/kotus_sanat.txt`, {encoding: 'utf-8'}, (err, data) => {
       if (err) {
         reject(err);
         return;

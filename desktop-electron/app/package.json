@@ -1,0 +1,14 @@
+{
+  "name": "kotus-pwgen-electron",
+  "productName": "KOTUS pwgen",
+  "version": "0.1.0",
+  "description": "Password generator that uses the KOTUS word list",
+  "author": "Hannu Hartikainen",
+  "license": "LGPL-3.0+",
+  "homepage": "https://github.com/dancek/kotus-pwgen",
+  "private": true,
+  "main": "main.js",
+  "dependencies": {
+
+  }
+}
